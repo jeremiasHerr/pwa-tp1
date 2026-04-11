@@ -1,7 +1,101 @@
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   width: 16rem;
-  flex-shrink: 0;
-  background-color: #111827;
-  color: white;
-  height: 100%;
+  background-color: #0a0d1f;
+  padding: 1rem;
+  font-family: sans-serif;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.genreSection {
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+
+.genreTitle {
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.genreList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.genreItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.genreCount {
+  font-family: monospace;
+  font-weight: 700;
+}
+
+.genreCount.indigo {
+  color: #818cf8;
+}
+
+.genreCount.rose {
+  color: #fb7185;
+}
+
+.genreCount.orange {
+  color: #fb923c;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #ff7d54;
+  color: #0a0d1f;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+.addButton:hover {
+  background-color: #ff6b3d;
+}
+
+.addButton:active {
+  transform: scale(0.95);
+}
+
+.addButton span:first-child {
+  font-size: 1.25rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.5rem;
 }

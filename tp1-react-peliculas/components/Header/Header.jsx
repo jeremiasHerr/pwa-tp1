@@ -4,10 +4,8 @@ import SearchBar from './SearchBar';
 import TopBar from './TopBar';
 export default function Header(){
     return (
-        <>
-            <div className={styles.header}>
-                Header
-<TopBar />
-   </>
+        <div className={styles.header}>
+            <TopBar />
+        </div>
     );
 }
