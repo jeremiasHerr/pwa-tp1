@@ -1,7 +1,9 @@
+import styles from './Sidebar.module.css'
+
 export default function Sidebar(){
     return (
         <>
-            <div className="w-64 flex-shrink-0 bg-gray-900 text-white h-full">
+            <div className={styles.sidebar}>
                 Sidebar
             </div>
         </>

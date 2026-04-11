@@ -1,0 +1,11 @@
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  color: #f789c2;
+}
+
+.ratingValue {
+  margin: 0;
+}

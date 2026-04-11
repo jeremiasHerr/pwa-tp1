@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  overflow-y: auto;
+  gap: 1.875rem;
+  padding: 2rem;
+  background-color: #060e20;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  color: white;
+}
+
+.sectionContent {
+  margin-top: 1rem;
+}
+
+.watchedContent {
+  margin-top: 2.25rem;
+}
