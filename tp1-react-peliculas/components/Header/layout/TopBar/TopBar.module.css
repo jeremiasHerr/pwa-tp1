@@ -1,0 +1,46 @@
+.topbar {
+  display: flex;
+  height: 5rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(16, 23, 42, 0.9);
+  padding: 0 2rem;
+  backdrop-filter: blur(4px);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.branding {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 2.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.subtitle {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 0.25rem;
+}
+
+.userControlsWrapper {
+  width: 16rem;
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,24 @@
+.button {
+  position: relative;
+  padding: 0.5rem;
+  color: #94a3b8;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.button:hover {
+  color: #ffffff;
+}
+
+.notification {
+  position: absolute;
+  top: 0.375rem;
+  right: 0.375rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #ec4899;
+  border-radius: 50%;
+  border: 2px solid #10172A;
+}
