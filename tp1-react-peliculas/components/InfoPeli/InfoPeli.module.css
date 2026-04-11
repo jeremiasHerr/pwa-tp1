@@ -1,0 +1,26 @@
+.container {
+  color: white;
+  margin-left: 0.75rem;
+  max-width: 15rem;
+}
+
+.textCompact {
+  font-size: 0.75rem;
+}
+
+.textNormal {
+  font-size: 0.875rem;
+}
+
+.title {
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  font-weight: 500;
+  color: #a3aac4;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}

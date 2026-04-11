@@ -1,0 +1,36 @@
+.badge {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  color: black;
+}
+
+.badge.compact {
+  font-size: 0.625rem;
+  padding: 0 0.25rem;
+}
+
+.badge.normal {
+  font-size: 0.75rem;
+  padding: 0 0.5rem 0.125rem 0.5rem;
+}
+
+.badge.large {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.badge.movie {
+  background-color: #f789c2;
+}
+
+.badge.serie {
+  background-color: #a78bfa;
+}
+
+.badge.documental {
+  background-color: #4ade80;
+}

@@ -1,13 +1,14 @@
 //import Titulo from '../../components/Titulo/titulo' parte del tp pero no se para que
 import Sidebar from "../../components/Sidebar/Sidebar.jsx";
 import MainContent from "../../components/MainContent/MainContent.jsx";
-import Header from '../../components/Header/Header.jsx';
+import Header from "../../components/Header/Header.jsx";
+import styles from './home.module.css'
 
 function Home() {
   return (
-    <div className="flex flex-col h-screen overflow-hidden bg-gray-100">
+    <div className={styles.container}>
       <Header/>
-      <div className="flex flex-1 overflow-hidden">
+      <div className={styles.content}>
         <Sidebar/>
         <MainContent/>
       </div>

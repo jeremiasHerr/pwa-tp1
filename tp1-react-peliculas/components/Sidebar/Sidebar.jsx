@@ -1,3 +1,4 @@
+import styles from './Sidebar.module.css'
 import NavItem from './navItems';
 import { MENU_ITEMS } from '../../src/constants/navegacion';
 import { useState } from 'react';
@@ -13,6 +14,9 @@ export default function Sidebar(){
     ];
 
     return (
+        <>
+            <div className={styles.sidebar}>
+                Sidebar
             <div className="flex flex-col h-screen w-64 bg-[#0a0d1f] p-4 font-sans border-white/5 ">
                 {/*Navegacion principal */}
                 <nav className="space-y-1 mb-8">
