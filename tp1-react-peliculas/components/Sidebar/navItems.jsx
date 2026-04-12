@@ -1,14 +1,17 @@
+
 import React from 'react';
+import styles from './Sidebar.module.css';
 
 const NavItem = ({icon, etiqueta, estaActivo, onClick}) => {
     return (
         <div onClick={onClick}
-            className={`flex items-center gap-4 px-4 py-3 rounded-lg cursor-pointed transition-all duration-200
-                ${estaActivo ? 'bg-white/5 text-white border-l-4 border-orange-500 rounded-l-none' : 'text-gray-400 hover:bg-white/5 hover:text-withe'}`}
+            className={`${styles.navItem}
+                ${estaActivo ? styles.active : styles.inactive}
+            `}
         >
             {/*agregar icon luego*/}
-            {icon && <div className="flex-shrink-0">{icon}</div>}
-            <span className="font-medium text-[15px]">{etiqueta}</span>
+            {icon && <div className={styles.iconContainer}>{icon}</div>}
+            <span className={styles.navText}>{etiqueta}</span>
         </div>
     );
 };

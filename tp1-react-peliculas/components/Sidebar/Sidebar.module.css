@@ -4,8 +4,8 @@
   height: 100vh;
   width: 16rem;
   background-color: #0a0d1f;
-  padding: 1rem;
-  font-family: sans-serif;
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   box-sizing: border-box;
 }
@@ -13,89 +13,113 @@
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.5rem;
   margin-bottom: 2rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-left: 4px solid #ff7d54;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.inactive {
+  color: #9ca3af;
+}
+
+.inactive:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.navText {
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .genreSection {
   margin-top: auto;
-  margin-bottom: 1.5rem;
-  padding: 0 1rem;
+  margin-bottom: 2rem;
 }
 
 .genreTitle {
-  font-size: 0.625rem;
+  font-size: 11px;
   font-weight: 700;
-  color: #6b7280;
+  color: #4b5563;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-bottom: 1rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.25rem;
 }
 
 .genreList {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .genreItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.875rem;
+  font-size: 14px;
   color: #9ca3af;
 }
 
 .genreCount {
-  font-family: monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
 }
 
-.genreCount.indigo {
-  color: #818cf8;
-}
-
-.genreCount.rose {
-  color: #fb7185;
-}
-
-.genreCount.orange {
-  color: #fb923c;
-}
+.indigo {color: #818cf8;}
+.rose { color: #fb7185;}
+.orange {color: #fb923c;}
 
 .addButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   background-color: #ff7d54;
   color: #0a0d1f;
-  font-weight: 700;
-  padding: 0.75rem 1rem;
+  font-weight: 800;
+  padding: 1rem;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 0.85rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   margin-bottom: 2.5rem;
-  font-size: 1rem;
+  width: 100%;
 }
 
 .addButton:hover {
   background-color: #ff6b3d;
+  filter: brightness(1.1);
 }
 
 .addButton:active {
-  transform: scale(0.95);
+  transform: scale(0.96);
 }
 
-.addButton span:first-child {
-  font-size: 1.25rem;
+.addButton:active {
+  transform: scale(0.96);
 }
 
 .footer {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 1.5rem;
 }
