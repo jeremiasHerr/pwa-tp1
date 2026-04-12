@@ -1,5 +1,5 @@
-import styles from './Sidebar.module.css'
-import NavItem from './navItems';
+import styles from './Sidebar.module.css';
+import NavItem from './NavItems';
 import { MENU_ITEMS } from '../../src/constants/navegacion';
 import { useState } from 'react';
 
