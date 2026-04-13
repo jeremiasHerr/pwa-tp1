@@ -1,6 +1,6 @@
 import styles from './CardBadge.module.css'
 
-export default function CardBadge({ tipo, size = "normal" }) {
+export default function CardBadge({ tipo, size = "normal", texto}) {
   
   const sizeClass = {
     compact: styles.compact,
@@ -12,13 +12,13 @@ export default function CardBadge({ tipo, size = "normal" }) {
   const colorClass = {
     movie: styles.movie,
     serie: styles.serie,
-    documental: styles.documental
+    info: styles.info
   };
   const selectedColorClass = colorClass[tipo] || styles.movie;
 
   return (
     <div className={`${styles.badge} ${selectedColorClass} ${selectedSizeClass}`}>
-      {tipo}
+      {texto}
     </div>
   );
 }

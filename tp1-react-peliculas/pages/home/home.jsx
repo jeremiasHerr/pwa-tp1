@@ -4,13 +4,13 @@ import MainContent from "../../components/MainContent/MainContent.jsx";
 import Header from "../../components/Header/layout/Header/Header.jsx";
 import styles from './home.module.css'
 
-function Home() {
+function Home({porVer, vistas, moverAVisto,eliminarDeLista, moverAPorVer}) {
   return (
     <div className={styles.container}>
       <Header/>
       <div className={styles.content}>
         <Sidebar/>
-        <MainContent/>
+        <MainContent moverAPorVer={moverAPorVer} moverAVisto={moverAVisto} eliminarDeLista={eliminarDeLista} porVer={porVer} vistas={vistas}/>
       </div>
     </div>
   )

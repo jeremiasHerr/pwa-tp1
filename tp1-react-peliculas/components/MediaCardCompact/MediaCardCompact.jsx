@@ -3,31 +3,32 @@ import Rating from "../Rating/Rating";
 import { Trash2, RotateCcw } from "lucide-react";
 import styles from './MediaCardCompact.module.css'
 
-export default function MediaCardCompact() {
+export default function MediaCardCompact({id,poster, anio, genero, titulo, puntuacion, tipo, eliminarDeLista, moverAPorVer}) {
+  const tipoTexto = tipo === "movie" ? "Pelicula":"Serie";
   return (
     <>
       <div className={styles.card}>
         <div>
           <img
-            src="../../rapsody.jpg"
+            src={poster}
             className={styles.cardImage}
           ></img>
         </div>
         <div className={styles.cardContent}>
           <InfoPeli
-            texto="2018 • Musical / Documental"
-            nombre="Bohemian Rhapsody: la historia de Freddie Mercury"
+            texto={`${anio} • ${genero} • ${tipoTexto}`}
+            nombre={titulo}
             compacta={true}
           />
           <div className={styles.spacer}></div>
         </div>
         <div className={styles.cardActions}>
-          <Rating puntuacion="4.5" />
+          <Rating puntuacion={puntuacion} />
           <div className={styles.buttonGroup}>
-            <button className={styles.iconButton}>
+            <button className={styles.iconButton} onClick={() => moverAPorVer(id)}>
               <RotateCcw className="w-3.5 h-3.5" />
             </button>
-            <button className={styles.iconButton}>
+            <button className={styles.iconButton} onClick={() => eliminarDeLista(id, "vistas")}>
               <Trash2 className="w-3.5 h-3.5" />
             </button>
           </div>

@@ -1,14 +1,14 @@
 import { Star } from "lucide-react";
 import styles from './Rating.module.css'
 
-export default function Rating(props) {
+export default function Rating({puntuacion}) {
   return (
     <>
       <div className={styles.ratingContainer}>
         <div>
-            <Star className="h-4 w-3.5 fill-[#f789c2]" />
+            <Star className="" />
         </div>
-        <p className={styles.ratingValue}>{props.puntuacion}</p>
+        <p className={styles.ratingValue}>{puntuacion}</p>
       </div>
     </>
   );

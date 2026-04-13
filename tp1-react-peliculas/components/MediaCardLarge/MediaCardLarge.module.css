@@ -1,11 +1,11 @@
 .card {
   background-color: #0f1930;
   border-radius: 0.5rem;
-  height: 12rem;
+  height: 14rem;
   display: flex;
   padding: 1rem;
   color: white;
-  width: 31.25rem;
+  width: 33.25rem;
 }
 
 .cardImage {
@@ -44,10 +44,23 @@
   color: white;
 }
 
+.iconButton:hover{
+  color: #ff7d54;
+}
+
 .actionButtonText {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #dee5ff;
+}
+
+.actionButton:hover{
+  color:#ff7d54;
+}
+
+
+.actionButton:hover p{
+  color:#ff7d54;
 }
 
 .buttonGroup {
