@@ -19,7 +19,7 @@
 }
 
 .badge.large {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   padding: 0.25rem 0.75rem;
 }
 
@@ -31,6 +31,7 @@
   background-color: #a78bfa;
 }
 
-.badge.documental {
-  background-color: #4ade80;
+.badge.info {
+  background-color: #1e293b;
+  color: #94a3b8;
 }

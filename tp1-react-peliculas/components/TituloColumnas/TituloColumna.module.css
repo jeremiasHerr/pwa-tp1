@@ -1,0 +1,10 @@
+.titulo{
+    display: flex;
+    column-gap: 20px;
+}
+
+.titulo p {
+    font-size: 24px;
+    font-weight: 700;
+    color: #dee5ff;
+}

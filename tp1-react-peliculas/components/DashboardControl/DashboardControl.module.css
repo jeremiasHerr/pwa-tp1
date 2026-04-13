@@ -1,0 +1,53 @@
+.dashboard{
+    background-color: #0f172a80;
+    border-radius: 0.5rem;
+    width: 100%;
+    grid-column: span 2;
+    color: #94a3b8;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    column-gap: 1rem;
+}
+
+.containerBotones{
+    padding: 0.3rem;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: #18223b;
+    display: flex;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.flechas{
+    background-color: transparent;
+    color: #94a3b8;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.flechas:hover{
+    color: #ff7d54;
+}
+
+.containerCategoria{
+    padding: 0.3rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    background-color: #18223b;
+
+}
+.containerCategoriaActivo{   
+    background-color: #2e3e57;
+    border-radius: 0.5rem;
+    color: #dee5ff;
+}
+
+.textoCategoria{
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    font-size: 15px;
+}

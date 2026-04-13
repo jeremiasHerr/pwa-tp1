@@ -1,11 +1,11 @@
 .card {
   background-color: #0f1930;
   border-radius: 0.5rem;
-  height: 9rem;
+  height: 12rem;
   display: flex;
   padding: 1rem;
   color: white;
-  width: 25rem;
+  width: 29rem;
 }
 
 .cardImage {
@@ -48,4 +48,8 @@
   border: none;
   padding: 0;
   color: white;
+}
+
+.iconButton:hover{
+  color:#ff7d54;
 }
