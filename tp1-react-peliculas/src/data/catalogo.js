@@ -1,4 +1,4 @@
-const catalogoBase = [
+export const catalogoBase = [
   {
     id: "1",
     title: "Bohemian Rhapsody",
@@ -7,7 +7,7 @@ const catalogoBase = [
     genre: "Musical",
     rating: 7.9,
     type: "movie",
-    poster: "https://image.tmdb.org/t/p/w500/lHu1wtNaczFPGFDTrjCSzeLPTKN.jpg"
+    poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/gbmkFWdtihe1VfydTDsieQ6VfGL.jpg"
   },
   {
     id: "2",
@@ -15,9 +15,9 @@ const catalogoBase = [
     director: "Josh Safdie",
     year: 2025,
     genre: "Drama",
-    rating: 0.0, // Al ser un lanzamiento futuro o muy reciente, puedes manejar lógicas de "Sin calificar"
+    rating: 7.7,
     type: "movie",
-    poster: "https://image.tmdb.org/t/p/w500/3oXvN5k1l9xM2G0fXzZ2wL5hO1p.jpg" // Placeholder genérico o URL real si ya existe en TMDB
+    poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/firAhZA0uQvRL2slp7v3AnOj0ZX.jpg"
   },
   {
     id: "3",
@@ -57,7 +57,7 @@ const catalogoBase = [
     genre: "Comedia",
     rating: 9.0,
     type: "serie",
-    poster: "https://image.tmdb.org/t/p/w500/qWnJ1HNZ4y41OSm5ikwOWroOZgq.jpg"
+    poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/qM1fX1Cg7NdvItdpURi7zCrBfVN.jpg"
   },
   {
     id: "7",
@@ -107,7 +107,7 @@ const catalogoBase = [
     genre: "Comedia",
     rating: 7.6,
     type: "movie",
-    poster: "https://image.tmdb.org/t/p/w500/ek8e8txUyUwd2HNXvnZ28q4BHEw.jpg"
+    poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/ek8e8txUyUwd2BNqj6lFEerJfbq.jpg"
   },
   {
     id: "12",
@@ -117,7 +117,7 @@ const catalogoBase = [
     genre: "Suspenso",
     rating: 8.7,
     type: "serie",
-    poster: "https://image.tmdb.org/t/p/w500/kUuL0i2zPEn6x0pCrr1tXv0bLIn.jpg"
+    poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/pPHpeI2X1qEd1CS1SeyrdhZ4qnT.jpg"
   },
   {
     id: "13",
@@ -137,7 +137,7 @@ const catalogoBase = [
     genre: "Drama",
     rating: 8.9,
     type: "serie",
-    poster: "https://image.tmdb.org/t/p/w500/7ywAABq242vT71f7y3A5P8Lq5y1.jpg"
+    poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/z0XiwdrCQ9yVIr4O0pxzaAYRxdW.jpg"
   },
   {
     id: "15",
@@ -157,7 +157,7 @@ const catalogoBase = [
     genre: "Drama",
     rating: 9.2,
     type: "serie",
-    poster: "https://image.tmdb.org/t/p/w500/6vMawTQxr1z980wXJd4yq0xX2N3.jpg"
+    poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/rTc7ZXdroqjkKivFPvCPX0Ru7uw.jpg"
   },
   {
     id: "17",
@@ -177,7 +177,7 @@ const catalogoBase = [
     genre: "Suspenso",
     rating: 8.9,
     type: "movie",
-    poster: "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8SPFPzT.jpg"
+    poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg"
   },
   {
     id: "19",
@@ -187,7 +187,7 @@ const catalogoBase = [
     genre: "Acción",
     rating: 8.8,
     type: "serie",
-    poster: "https://image.tmdb.org/t/p/w500/uKvVjHNqB5pSQp0rsxS15k0IeX7.jpg"
+    poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/dmo6TYuuJgaYinXBPjrgG9mB5od.jpg"
   },
   {
     id: "20",

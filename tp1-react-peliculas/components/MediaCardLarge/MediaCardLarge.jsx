@@ -3,18 +3,18 @@ import CardBadge from "../CardBadge/CardBadge";
 import { Trash2, Pencil, CirclePlus } from "lucide-react";
 import styles from './MediaCardLarge.module.css'
 
-export default function MediaCardLarge() {
+export default function MediaCardLarge({poster, genero, anio, tipo, titulo}) {
   return (
     <>
       <div className={styles.card}>
         <div>
           <img
-            src="../../marty_supreme.jpg"
+            src={poster}
             className={styles.cardImage}
           ></img>
         </div>
         <div className={styles.cardContent}>
-          <InfoPeli texto="2025 • Drama / Biography" nombre="Marty Supreme" compacta={false}/>
+          <InfoPeli texto={`${anio} • ${genero}`} nombre={titulo} compacta={false}/>
           <div className={styles.spacer}>
             <button className={styles.actionButton}>
               <CirclePlus className="w-4 h-4" />
@@ -25,7 +25,7 @@ export default function MediaCardLarge() {
           </div>
         </div>
         <div className={styles.cardActions}>
-          <CardBadge tipo="movie"/>
+          <CardBadge tipo={tipo} />
           <div className={styles.buttonGroup}>
             <button className={styles.iconButton}>
               <Pencil className="w-3.5 h-3.5" />
