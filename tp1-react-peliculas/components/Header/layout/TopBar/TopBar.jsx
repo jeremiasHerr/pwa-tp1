@@ -3,7 +3,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import UserControls from '../UserControls/UserControls';
 import styles from './TopBar.module.css';
 
-const TopBar = () => {
+const TopBar = ({ onFilter }) => {
     return (
         <div className={styles.topbar}>
             <div className={styles.branding}>
@@ -13,7 +13,7 @@ const TopBar = () => {
                 </span>
             </div>
             
-            <SearchBar />
+            <SearchBar onFilter={onFilter}/>
 
             <div className={styles.userControlsWrapper}>
                 <UserControls />
