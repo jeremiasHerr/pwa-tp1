@@ -2,14 +2,17 @@ import MediaCardLarge from "../MediaCardLarge/MediaCardLarge";
 import MediaCardCompact from "../MediaCardCompact/MediaCardCompact";
 import styles from './MainContent.module.css'
 import TituloColumna from "../TituloColumnas/TituloColumna";
-import DashboardControl from "../DashboardControl/DashboardControl";
-import { catalogoBase } from "../../src/data/catalogo"; 
+import DashboardControl from "../DashboardControl/DashboardControl"; 
 
-export default function MainContent({vistas, porVer, moverAVisto, eliminarDeLista, moverAPorVer}){
-    const pelisPorVer = catalogoBase.filter(item => porVer.includes(item.id));
-    const pelisVistas = vistas.length > 0 ? catalogoBase.filter(item => vistas.includes(item.id)):[];
+export default function MainContent({vistas, porVer, moverAVisto, eliminarDeLista, moverAPorVer, catalogoCompleto, catalogoFiltrado, alEditar}){
+   const pelisPorVer = catalogoCompleto.filter(item => porVer.map(String).includes(String(item.id)));
+    const pelisVistas = vistas.length > 0 ? catalogoCompleto.filter(item => vistas.includes(item.id)) : [];
     const cantPorVer = pelisPorVer.length;
     const cantVistas = pelisVistas.length;
+
+    if (catalogoCompleto.length ===0) {
+        return <p style={{color: "white", textAlign: "center"}}>Cargando catalogo</p>
+    }
     return (
         <>
             <div className={styles.container}>
@@ -31,6 +34,7 @@ export default function MainContent({vistas, porVer, moverAVisto, eliminarDeList
                                     titulo={item.title}
                                     moverAVisto={moverAVisto}
                                     eliminarDeLista={eliminarDeLista}
+                                    alEditar={() => alEditar(item)}
                                 />
                             ))
                         }
@@ -54,6 +58,7 @@ export default function MainContent({vistas, porVer, moverAVisto, eliminarDeList
                                     puntuacion={item.rating}
                                     eliminarDeLista={eliminarDeLista}
                                     moverAPorVer={moverAPorVer}
+                                    alEditar={() => alEditar(item)}
                                 />
                             ))
                         }

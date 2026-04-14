@@ -1,7 +1,6 @@
 import './App.css';
 import Home from '../pages/home/home.jsx';
  import { useState, useEffect} from 'react';
-
 function App() {
 
   const [listaUsuario, setListaUsuario] = useState(() => {
@@ -9,6 +8,7 @@ function App() {
     return datos ? JSON.parse(datos) : {porVer: [], vistas: []};
   });
 
+  
   useEffect(() => {
     localStorage.setItem("seriesPelisUsuario", JSON.stringify(listaUsuario))
   }, [listaUsuario]);
