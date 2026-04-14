@@ -1,0 +1,108 @@
+.formContainer {
+    background-color: #0f1930;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    color: #333;
+}
+
+.title {
+    margin: 0 0 25px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+select {
+    background-color: #bdc6db;
+}
+input {
+        border-color: #bdc6db;
+        background-color: #bdc6db;
+    }
+
+
+.formGroup {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.formRow .formGroup {
+    margin-bottom: 0;
+}
+
+.formGroup label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.formGroup input,
+.formGroup select {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.formGroup input::placeholder {
+    color: #999;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+    justify-content: flex-end;
+}
+
+.btnGuardar,
+.btnCancelar {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btnGuardar {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.btnGuardar:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btnCancelar {
+    background-color: #e5e7eb;
+    color: #1a1a1a;
+}
+
+.btnCancelar:hover {
+    background-color: #d1d5db;
+}
