@@ -1,15 +1,21 @@
 .topbar {
   display: flex;
-  height: 5rem;
+  height: 6rem;
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(16, 23, 42, 0.9);
+  background-color: #0b1e2d;
   padding: 0 2rem;
   backdrop-filter: blur(4px);
-  position: sticky;
+  position: fixed;
+  left: 0;
   top: 0;
-  z-index: 40;
+  z-index: 100;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 .branding {

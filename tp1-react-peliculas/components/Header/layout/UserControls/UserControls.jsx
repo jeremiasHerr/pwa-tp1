@@ -18,10 +18,7 @@ const UserControls = () => (
         </IconButton>
 
         <div className={styles.userMenu}>
-            <UserAvatar src="https://randomuser.me/api/portraits/men/32.jpg" />
-            <svg className={styles.chevron} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-            </svg>
+            <UserAvatar src="../../../public/perfil.png" />
         </div>
     </div>
 );

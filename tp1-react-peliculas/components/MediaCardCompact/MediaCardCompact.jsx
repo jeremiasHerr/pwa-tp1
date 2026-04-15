@@ -1,9 +1,9 @@
 import InfoPeli from "../InfoPeli/InfoPeli";
 import Rating from "../Rating/Rating";
-import { Trash2, RotateCcw } from "lucide-react";
+import { Trash2, Pencil, RotateCcw } from "lucide-react";
 import styles from './MediaCardCompact.module.css'
 
-export default function MediaCardCompact({id,poster, anio, genero, titulo, puntuacion, tipo, eliminarDeLista, moverAPorVer}) {
+export default function MediaCardCompact({id,poster, anio, genero, titulo, puntuacion, tipo, eliminarDeLista, moverAPorVer, alEditar}) {
   const tipoTexto = tipo === "movie" ? "Pelicula":"Serie";
   return (
     <>
@@ -25,6 +25,9 @@ export default function MediaCardCompact({id,poster, anio, genero, titulo, puntu
         <div className={styles.cardActions}>
           <Rating puntuacion={puntuacion} />
           <div className={styles.buttonGroup}>
+             <button className={styles.iconButton} onClick={() => alEditar({id, titulo})}>
+              <Pencil className="w-3.5 h-3.5" />
+            </button>
             <button className={styles.iconButton} onClick={() => moverAPorVer(id)}>
               <RotateCcw className="w-3.5 h-3.5" />
             </button>
