@@ -11,6 +11,7 @@
 
 .section {
   display: flex;
+  height: 100vh;
   flex-direction: column;
   margin-top: 0;
 }

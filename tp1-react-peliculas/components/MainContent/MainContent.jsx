@@ -33,14 +33,13 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
     const totalSeriesVistas = (titulosVistos.filter(item => item.tipo == "serie")).length;
     const totaltitulosVistos = (titulosVistos.filter(item => item.tipo == "movie")).length;
 
-
     if (catalogoCompleto.length === 0) {
         return <p style={{ color: "white", textAlign: "center" }}>Cargando catalogo</p>
     }
     return (
         <>
             <div className={styles.container}>
-                <div style={{ display: "flex", gap: "7rem", marginBottom: "2rem", width: "200px" }}>
+                <div style={{ display: "flex", gap: "7rem", width: "200px" }}>
                     <div style={{minWidth: "400px"}}>
                         <StatisticsCard
                             nombreCard="Total de titulos"
