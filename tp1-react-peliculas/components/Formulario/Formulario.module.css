@@ -36,6 +36,9 @@ position: fixed;
     padding: 3px;
     width: 36px;
     height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -120,10 +123,12 @@ position: fixed;
     0 10px 15px -3px rgba(182, 160, 255, 0.2), 
     0 4px 6px -4px rgba(182, 160, 255, 0.2);
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .btnGuardar:hover {
     outline: 2px dashed #c8d1f0;
+    filter: brightness(1.1);
 }
 
 .btnGuardar p {

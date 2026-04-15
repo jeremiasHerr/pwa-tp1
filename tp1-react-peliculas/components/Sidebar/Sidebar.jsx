@@ -49,7 +49,7 @@ export default function Sidebar({agregarObraPorVer, agregarObraVista}){
             {/*Boton para agregar titulos */}
             <button className={styles.addButton} onClick={() => mostrarFormulario(true)}>
                 <span>+</span>
-                <span>Agregar Titulo</span>
+                <span>AGREGAR TITULO</span>
             </button>
 
             {/*footer*/}
