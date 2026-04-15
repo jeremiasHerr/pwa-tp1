@@ -12,6 +12,7 @@
 .section {
   display: flex;
   flex-direction: column;
+  margin-top: -480px;
 }
 
 .sectionTitle {
@@ -25,3 +26,4 @@
 .watchedContent {
   margin-top: 2.25rem;
 }
+
