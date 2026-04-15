@@ -9,7 +9,7 @@ const SearchBar = ({ onFilter }) => {
   const [valorTipo, setValorTipo] = useState('all');
   const [valorGenero, setValorGenero] = useState('all');
   useEffect(() => {
-    onFilter?.({ search: valorBusqueda, type: valorTipo, genre: valorGenero});
+    onFilter?.({ busqueda: valorBusqueda, tipo: valorTipo, genero: valorGenero});
   }, [valorBusqueda, valorTipo, valorGenero]);
 
   const handleInputChange = (e) => {
@@ -49,7 +49,7 @@ const SearchBar = ({ onFilter }) => {
             <option value="Comedia">Comedia</option>
             <option value="Romance">Romance</option>
             <option value="Drama">Drama</option>
-            <option value="Ciencia Ficcion"> Ciencia Ficcion</option>
+            <option value="Ciencia Ficción"> Ciencia Ficcion</option>
             <option value="Suspenso">Suspenso</option>
             <option value="Musical">Musical</option>
           </select>

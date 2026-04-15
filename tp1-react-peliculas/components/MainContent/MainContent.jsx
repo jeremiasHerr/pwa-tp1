@@ -6,7 +6,7 @@ import DashboardControl from "../DashboardControl/DashboardControl";
 import { useMemo } from "react";
 import StatisticsCard from "../StatiticsCard/StatisticCard";
 
-export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLista, moverAPorVer, catalogoCompleto, catalogoFiltrado, alEditar }) {
+export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLista, moverAPorVer, catalogoCompleto, catalogoFiltrado, alEditar, buscarTerm = "", tipoSeleccionado = "all", generoSeleccionado = "all" }) {
   const obrasUsuario = useMemo(() => {
       const catalogo = JSON.parse(localStorage.getItem("titulos")) || [];
 
@@ -24,11 +24,39 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
         pelisVistas: filtradasVistas,
       };
     }, [porVer, vistas]);
+
+  // Función para filtrar por término de búsqueda, tipo y género
+  const aplicarFiltroTermino = (items) => {
+    const normalizarBusqueda = buscarTerm.trim().toLowerCase();
+    
+    return items.filter((item) => {
+      // Filtro por búsqueda
+      const titulo = (item.titulo || '').toLowerCase();
+      const director = (item.director || '').toLowerCase();
+      const coincideBusqueda = normalizarBusqueda === '' || 
+                               titulo.includes(normalizarBusqueda) || 
+                               director.includes(normalizarBusqueda);
+
+      const coincideTipo = tipoSeleccionado === 'all' || item.tipo === tipoSeleccionado;
+      const coincideGenero = generoSeleccionado === 'all' || item.genero === generoSeleccionado;
+
+      return coincideBusqueda && coincideTipo && coincideGenero;
+    });
+  };
+
+  // Filtrar las obras según el término de búsqueda, tipo y género
+  const pelisPorVerFiltradas = useMemo(() => {
+    return aplicarFiltroTermino(obrasUsuario.pelisPorVer);
+  }, [obrasUsuario.pelisPorVer, buscarTerm, tipoSeleccionado, generoSeleccionado]);
+
+  const pelisVistasFiltradas = useMemo(() => {
+    return aplicarFiltroTermino(obrasUsuario.pelisVistas);
+  }, [obrasUsuario.pelisVistas, buscarTerm, tipoSeleccionado, generoSeleccionado]);
   
     const titulosPorVer = catalogoCompleto.filter(item => porVer.map(String).includes(String(item.id)));
     const titulosVistos = vistas.length > 0 ? catalogoCompleto.filter(item => vistas.includes(item.id)) : [];
-    const cantPorVer = obrasUsuario.pelisPorVer.length;
-    const cantVistas = obrasUsuario.pelisVistas.length; //cambiar por titulos!
+    const cantPorVer = pelisPorVerFiltradas.length;
+    const cantVistas = pelisVistasFiltradas.length;
     const totalTitulos = catalogoCompleto.length;
     const totalSeriesVistas = (titulosVistos.filter(item => item.tipo == "serie")).length;
     const totaltitulosVistos = (titulosVistos.filter(item => item.tipo == "movie")).length;
@@ -82,7 +110,7 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                     </div>
                     <div className={styles.sectionContent}>
                         {
-                            obrasUsuario.pelisPorVer.map((item) => (
+                            pelisPorVerFiltradas.map((item) => (
                                 <MediaCardLarge
                                     key={item.id}
                                     id={item.id}
@@ -105,7 +133,7 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                     </div>
                     <div className={styles.watchedContent}>
                         {
-                            obrasUsuario.pelisVistas.map((item) => (
+                            pelisVistasFiltradas.map((item) => (
                                 <MediaCardCompact
                                     key={item.id}
                                     id={item.id}

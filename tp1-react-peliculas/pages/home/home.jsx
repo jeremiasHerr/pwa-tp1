@@ -31,9 +31,11 @@ function Home({porVer, vistas, moverAVisto,eliminarDeLista, moverAPorVer, agrega
     return titulosLocales.filter((pelicula) => {
       const coincidirTipo = tipoSeleccionado === 'all' || pelicula.type === tipoSeleccionado;
       const coincidirGenero = generoSeleccionado === 'all' || pelicula.genre === generoSeleccionado;
+      const titulo = (pelicula.title || pelicula.titulo || '').toLowerCase();
+      const director = (pelicula.director || '').toLowerCase();
       const coincidirTexto = normalizarBusqueda === '' || 
-            pelicula.title.toLowerCase().includes(normalizarBusqueda) ||
-            pelicula.director.toLowerCase().includes(normalizarBusqueda);
+            titulo.includes(normalizarBusqueda) ||
+            director.includes(normalizarBusqueda);
             
       return coincidirTipo && coincidirGenero && coincidirTexto;
     });
@@ -64,7 +66,7 @@ function Home({porVer, vistas, moverAVisto,eliminarDeLista, moverAPorVer, agrega
         </div>
       )}
 
-      <Header onfilter={handleFilter}/>
+      <Header onFilter={handleFilter}/>
       <div className={styles.content}>
         <Sidebar agregarObraVista={agregarNuevaObraVista} agregarObraPorVer={agregarNuevaObraPorVer}/>
         <MainContent 
@@ -76,6 +78,9 @@ function Home({porVer, vistas, moverAVisto,eliminarDeLista, moverAPorVer, agrega
           alEditar={(peli) => setPeliculaEnEdicion(peli)}
           catalogoCompleto={titulosLocales}
           catalogoFiltrado={catalogoFiltrado}
+          buscarTerm={buscarTerm}
+          tipoSeleccionado={tipoSeleccionado}
+          generoSeleccionado={generoSeleccionado}
         />
       </div>
     </div>

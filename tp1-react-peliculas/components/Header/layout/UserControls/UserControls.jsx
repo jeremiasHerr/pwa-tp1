@@ -18,7 +18,7 @@ const UserControls = () => (
         </IconButton>
 
         <div className={styles.userMenu}>
-            <UserAvatar src="../../../public/perfil.png" />
+            <UserAvatar src="../../../perfil.png" />
         </div>
     </div>
 );
