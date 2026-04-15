@@ -4,7 +4,8 @@ import styles from './MainContent.module.css'
 import TituloColumna from "../TituloColumnas/TituloColumna";
 import DashboardControl from "../DashboardControl/DashboardControl";
 import { useMemo } from "react";
-    
+import StatisticsCard from "../StatiticsCard/StatisticCard";
+
 export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLista, moverAPorVer, catalogoCompleto, catalogoFiltrado, alEditar }) {
   const obrasUsuario = useMemo(() => {
       const catalogo = JSON.parse(localStorage.getItem("titulos")) || [];
@@ -26,12 +27,12 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
   
     const titulosPorVer = catalogoCompleto.filter(item => porVer.map(String).includes(String(item.id)));
     const titulosVistos = vistas.length > 0 ? catalogoCompleto.filter(item => vistas.includes(item.id)) : [];
-    const cantPorVer = obrasUsuario.titulosPorVer.length;
-    const cantVistas = obrasUsuario.titulosVistos.length; //cambiar por titulos!
+    const cantPorVer = obrasUsuario.pelisPorVer.length;
+    const cantVistas = obrasUsuario.pelisVistas.length; //cambiar por titulos!
     const totalTitulos = catalogoCompleto.length;
-    const totalSeriesVistas = (titulosVistos.filter(item => item.type == "serie")).length;
-    const totaltitulosVistos = (titulosVistos.filter(item => item.type == "movie")).length;
-  import StatisticsCard from "../StatiticsCard/StatisticCard";
+    const totalSeriesVistas = (titulosVistos.filter(item => item.tipo == "serie")).length;
+    const totaltitulosVistos = (titulosVistos.filter(item => item.tipo == "movie")).length;
+
 
     if (catalogoCompleto.length === 0) {
         return <p style={{ color: "white", textAlign: "center" }}>Cargando catalogo</p>
@@ -82,7 +83,7 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                     </div>
                     <div className={styles.sectionContent}>
                         {
-                            obrasUsuario.titulosPorVer.map((item) => (
+                            obrasUsuario.pelisPorVer.map((item) => (
                                 <MediaCardLarge
                                     key={item.id}
                                     id={item.id}
@@ -105,7 +106,7 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                     </div>
                     <div className={styles.watchedContent}>
                         {
-                            obrasUsuario.titulosVistos.map((item) => (
+                            obrasUsuario.pelisVistas.map((item) => (
                                 <MediaCardCompact
                                     key={item.id}
                                     id={item.id}
