@@ -6,7 +6,7 @@ import styles from './home.module.css'
 import { useState } from "react";
 import { useMemo} from "react";
 
-function Home({porVer, vistas, moverAVisto,eliminarDeLista, moverAPorVer}) {
+function Home({porVer, vistas, moverAVisto,eliminarDeLista, moverAPorVer, agregarNuevaObraPorVer, agregarNuevaObraVista}) {
   const [buscarTerm, setBuscarTerm] = useState('');
   const [tipoSeleccionado, setTipoSeleccionado] = useState('all');
   const [generoSeleccionado, setGeneroSeleccionado] = useState('all');
@@ -33,7 +33,7 @@ function Home({porVer, vistas, moverAVisto,eliminarDeLista, moverAPorVer}) {
     <div className={styles.container}>
       <Header onfilter={handleFilter}/>
       <div className={styles.content}>
-        <Sidebar/>
+        <Sidebar agregarObraVista={agregarNuevaObraVista} agregarObraPorVer={agregarNuevaObraPorVer}/>
         <MainContent moverAPorVer={moverAPorVer} moverAVisto={moverAVisto} eliminarDeLista={eliminarDeLista} porVer={porVer} vistas={vistas}/>
       </div>
     </div>

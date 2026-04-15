@@ -1,0 +1,43 @@
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.field{
+  background-color: #1a2b4b;
+  border: none;
+  padding: 0.6rem;
+  color: #a3aac4;
+  border-radius: 0.5rem;
+  height: 5vh;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="radio"]{
+    width: 2rem;
+    height: 2rem;
+    appearance: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+/*
+Para que no se vea la flechita de los input type number
+*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.field:focus {
+  outline: 2px solid #ff7d54;
+}
+
+.field:hover{
+    outline: 2px solid #ff7d54;
+}

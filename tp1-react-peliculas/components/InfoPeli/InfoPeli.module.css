@@ -1,6 +1,5 @@
 .container {
   color: white;
-  margin-left: 0.75rem;
   max-width: 15rem;
 }
 
@@ -20,7 +19,7 @@
 .subtitle {
   font-weight: 500;
   color: #a3aac4;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1rem;
   opacity: 0.8;
   margin-top: 0.25rem;
 }
