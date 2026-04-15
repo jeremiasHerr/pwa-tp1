@@ -18,6 +18,7 @@ function App() {
     return datos ? JSON.parse(datos) : {porVer: [], vistas: []};
   });
 
+  
   useEffect(() => {
     localStorage.setItem("seriesPelisUsuario", JSON.stringify(listaUsuario))
   }, [listaUsuario]);

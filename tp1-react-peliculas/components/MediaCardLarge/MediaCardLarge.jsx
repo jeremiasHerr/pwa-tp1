@@ -3,7 +3,7 @@ import CardBadge from "../CardBadge/CardBadge";
 import { Trash2, Pencil, CirclePlus } from "lucide-react";
 import styles from './MediaCardLarge.module.css'
 
-export default function MediaCardLarge({id,poster, genero, anio, tipo, titulo, moverAVisto, eliminarDeLista}) {
+export default function MediaCardLarge({id,poster, genero, anio, tipo, titulo, moverAVisto, eliminarDeLista, alEditar}) {
   return (
     <>
       <div className={styles.card}>
@@ -27,7 +27,7 @@ export default function MediaCardLarge({id,poster, genero, anio, tipo, titulo, m
         <div className={styles.cardActions}>
           <CardBadge tipo={tipo} texto={tipo} size="large"/>
           <div className={styles.buttonGroup}>
-            <button className={styles.iconButton}>
+            <button className={styles.iconButton} onClick={() => alEditar({id, titulo})}>
               <Pencil className="w-3.5 h-3.5" />
             </button>
             <button className={styles.iconButton} onClick={() => eliminarDeLista(id,"porVer")}>

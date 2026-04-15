@@ -1,0 +1,57 @@
+
+
+.card {
+    background-color: #0f1930;
+    border-radius: 1rem;
+    align-items: center;
+    gap: 1.5rem;
+    display: flex;
+    padding: 1.5rem;
+    color: white;
+    width: 100%;
+    min-width: 250px;
+    border-left: 5px solid transparent;
+    transition: transform 0.2s;
+}
+
+
+.indigo { border-left-color: #818cf8; }
+.rosa { border-left-color: #fb7185; }
+.naranja { border-left-color: #fb923c; }
+
+.contenedorIcon {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconoImagen {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.contenidoCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nombreCard {
+    font-size: 10px;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+.contador {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
+}
