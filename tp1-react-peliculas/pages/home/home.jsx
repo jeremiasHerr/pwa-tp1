@@ -6,7 +6,7 @@ import { useState, useMemo, useEffect } from "react"; //
 import DataLoader from "../../components/DataLoader/DataLoader.jsx"; //
 import EditarTitulo from "../../components/EditarTitulo/EditarTitulo.jsx"; //
 
-function Home({porVer, vistas, moverAVisto, eliminarDeLista, moverAPorVer}) {
+function Home({porVer, vistas, moverAVisto,eliminarDeLista, moverAPorVer, agregarNuevaObraPorVer, agregarNuevaObraVista}) {
   const [buscarTerm, setBuscarTerm] = useState('');
   const [tipoSeleccionado, setTipoSeleccionado] = useState('all');
   const [generoSeleccionado, setGeneroSeleccionado] = useState('all');
@@ -66,7 +66,7 @@ function Home({porVer, vistas, moverAVisto, eliminarDeLista, moverAPorVer}) {
 
       <Header onfilter={handleFilter}/>
       <div className={styles.content}>
-        <Sidebar/>
+        <Sidebar agregarObraVista={agregarNuevaObraVista} agregarObraPorVer={agregarNuevaObraPorVer}/>
         <MainContent 
           moverAPorVer={moverAPorVer} 
           moverAVisto={moverAVisto} 

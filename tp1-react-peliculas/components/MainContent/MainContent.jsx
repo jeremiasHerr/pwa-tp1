@@ -3,16 +3,35 @@ import MediaCardCompact from "../MediaCardCompact/MediaCardCompact";
 import styles from './MainContent.module.css'
 import TituloColumna from "../TituloColumnas/TituloColumna";
 import DashboardControl from "../DashboardControl/DashboardControl";
-import StatisticsCard from "../StatiticsCard/StatisticCard";
-
+import { useMemo } from "react";
+    
 export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLista, moverAPorVer, catalogoCompleto, catalogoFiltrado, alEditar }) {
+  const obrasUsuario = useMemo(() => {
+      const catalogo = JSON.parse(localStorage.getItem("titulos")) || [];
+
+      const filtradasPorVer = catalogo.filter((item) =>
+        porVer.includes(item.id),
+      );
+      const filtradasVistas =
+        vistas.length > 0
+          ? catalogo.filter((item) => vistas.includes(item.id))
+          : [];
+      console.log("3. MainContent: Recibí la orden. Leyendo localStorage...");
+      console.log(filtradasPorVer)
+      return {
+        pelisPorVer: filtradasPorVer,
+        pelisVistas: filtradasVistas,
+      };
+    }, [porVer, vistas]);
+  
     const titulosPorVer = catalogoCompleto.filter(item => porVer.map(String).includes(String(item.id)));
     const titulosVistos = vistas.length > 0 ? catalogoCompleto.filter(item => vistas.includes(item.id)) : [];
-    const cantPorVer = titulosPorVer.length;
-    const cantVistas = titulosVistos.length; //cambiar por titulos!
+    const cantPorVer = obrasUsuario.titulosPorVer.length;
+    const cantVistas = obrasUsuario.titulosVistos.length; //cambiar por titulos!
     const totalTitulos = catalogoCompleto.length;
     const totalSeriesVistas = (titulosVistos.filter(item => item.type == "serie")).length;
     const totaltitulosVistos = (titulosVistos.filter(item => item.type == "movie")).length;
+  import StatisticsCard from "../StatiticsCard/StatisticCard";
 
     if (catalogoCompleto.length === 0) {
         return <p style={{ color: "white", textAlign: "center" }}>Cargando catalogo</p>
@@ -63,15 +82,15 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                     </div>
                     <div className={styles.sectionContent}>
                         {
-                            titulosPorVer.map((item) => (
+                            obrasUsuario.titulosPorVer.map((item) => (
                                 <MediaCardLarge
                                     key={item.id}
                                     id={item.id}
                                     poster={item.poster}
-                                    genero={item.genre}
-                                    anio={item.year}
-                                    tipo={item.type}
-                                    titulo={item.title}
+                                    genero={item.genero}
+                                    anio={item.anio}
+                                    tipo={item.tipo}
+                                    titulo={item.titulo}
                                     moverAVisto={moverAVisto}
                                     eliminarDeLista={eliminarDeLista}
                                     alEditar={() => alEditar(item)}
@@ -86,16 +105,16 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                     </div>
                     <div className={styles.watchedContent}>
                         {
-                            titulosVistos.map((item) => (
+                            obrasUsuario.titulosVistos.map((item) => (
                                 <MediaCardCompact
                                     key={item.id}
                                     id={item.id}
                                     poster={item.poster}
-                                    genero={item.genre}
-                                    anio={item.year}
-                                    tipo={item.type}
-                                    titulo={item.title}
-                                    puntuacion={item.rating}
+                                    genero={item.genero}
+                                    anio={item.anio}
+                                    tipo={item.tipo}
+                                    titulo={item.titulo}
+                                    puntuacion={item.puntuacion}
                                     eliminarDeLista={eliminarDeLista}
                                     moverAPorVer={moverAPorVer}
                                     alEditar={() => alEditar(item)}

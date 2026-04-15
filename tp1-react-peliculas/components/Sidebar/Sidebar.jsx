@@ -1,10 +1,12 @@
 import styles from './Sidebar.module.css';
 import NavItem from './NavItems';
 import { MENU_ITEMS } from '../../src/constants/navegacion';
-import { useState } from 'react';
+import {useState } from 'react';
+import Formulario from '../Formulario/Formulario';
 
-export default function Sidebar(){
+export default function Sidebar({agregarObraPorVer, agregarObraVista}){
     const [activeTab, setActiveTab] = useState('home');
+    const [formularioActivo, mostrarFormulario] = useState(false);
 
     //estos datos estan solamente para ver la visualizacion, cambiarlo luego para el conteo
     const generos = [
@@ -45,7 +47,7 @@ export default function Sidebar(){
             </div>
 
             {/*Boton para agregar titulos */}
-            <button className={styles.addButton}>
+            <button className={styles.addButton} onClick={() => mostrarFormulario(true)}>
                 <span>+</span>
                 <span>Agregar Titulo</span>
             </button>
@@ -62,6 +64,10 @@ export default function Sidebar(){
                     estaActivo={activeTab === 'help'}
                 />
             </div>
+            {
+                formularioActivo ? <Formulario agregarObraPorVer={agregarObraPorVer} agregarObraVista={agregarObraVista} mostrarFormulario={mostrarFormulario}/>:<></>
+            }
+            
         </div>
     );
 }   
