@@ -1,0 +1,20 @@
+.btnCerrar {
+    background-color: transparent;
+    outline: 0;
+    border-radius: 100%;
+    border-style: dashed;
+    color: #a3aac4;
+    border-color: #4f46e5;
+    padding: 3px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btnCerrar:hover {
+    background-color: rgba(255, 125, 84, 0.1);
+    color: #ff7d54;
+}

@@ -52,20 +52,7 @@ export default function Sidebar({agregarObraPorVer, agregarObraVista}){
             <button className={styles.addButton} onClick={() => mostrarFormulario(true)}>
                 <span>+</span>
                 <span>AGREGAR TITULO</span>
-            </button>
-
-            {/*footer*/}
-            <div className={styles.footer}>
-                <NavItem 
-                    etiqueta="Settings"
-                    estaActivo={activeTab === 'settings'}
-                    onClick={() => setActiveTab('settings')}
-                />
-                <NavItem 
-                    etiqueta="Help"
-                    estaActivo={activeTab === 'help'}
-                />
-            </div>
+            </button>           
             {
                 formularioActivo ? <Formulario agregarObraPorVer={agregarObraPorVer} agregarObraVista={agregarObraVista} mostrarFormulario={mostrarFormulario}/>:<></>
             }
