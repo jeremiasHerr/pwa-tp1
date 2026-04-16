@@ -17,8 +17,6 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
         vistas.length > 0
           ? catalogo.filter((item) => vistas.includes(item.id))
           : [];
-      console.log("3. MainContent: Recibí la orden. Leyendo localStorage...");
-      console.log(filtradasPorVer)
       return {
         pelisPorVer: filtradasPorVer,
         pelisVistas: filtradasVistas,
