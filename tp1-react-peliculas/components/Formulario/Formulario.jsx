@@ -71,7 +71,7 @@ export default function Formulario({mostrarFormulario, agregarObraVista,agregarO
                         <InfoPeli texto="TIPO DE CONTENIDO" compacta="true" />
                     </legend>
                     <div className={styles.containerBtns}>
-                        <button type="button" onClick={() => setTipo("pelicula")} className={`${styles.btnTipoContenido} ${tipoSeleccionado === "pelicula" ? styles.btnTipoContenidoActive:""}`}>
+                        <button type="button" onClick={() => setTipo("movie")} className={`${styles.btnTipoContenido} ${tipoSeleccionado === "movie" ? styles.btnTipoContenidoActive:""}`}>
                             <Clapperboard />
                             <p>Pelicula</p>
                         </button>

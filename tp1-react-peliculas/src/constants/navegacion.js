@@ -1,6 +1,5 @@
 export const MENU_ITEMS = [
-  { id: 'home', etiqueta: 'Home' },
-  { id: 'watchlist', etiqueta: 'My Watchlist' },
-  { id: 'finished', etiqueta: 'Finished' },
-  { id: 'discover', etiqueta: 'Discover' },
+  { id: 'home', etiqueta: 'Home', src: "../../casa.png" },
+  { id: 'watchlist', etiqueta: 'My Watchlist', src: "../../watchlist.png" },
+  { id: 'finished', etiqueta: 'Finished', src: "../../finished.png"}
 ];

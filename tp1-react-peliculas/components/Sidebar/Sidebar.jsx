@@ -25,6 +25,8 @@ export default function Sidebar({agregarObraPorVer, agregarObraVista}){
                         etiqueta={item.etiqueta} 
                         estaActivo={activeTab === item.id}
                         onClick={() => setActiveTab(item.id)}
+                        icon={true}
+                        icono={item.src}
                         />
                 ))}
             </nav>
