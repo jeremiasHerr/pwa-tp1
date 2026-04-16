@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './Sidebar.module.css';
 
-const NavItem = ({icon, etiqueta, estaActivo, onClick}) => {
+const NavItem = ({icon, etiqueta, estaActivo, onClick, icono}) => {
     return (
         <div onClick={onClick}
             className={`${styles.navItem}
@@ -10,7 +10,12 @@ const NavItem = ({icon, etiqueta, estaActivo, onClick}) => {
             `}
         >
             {/*agregar icon luego*/}
-            {icon && <div className={styles.iconContainer}>{icon}</div>}
+            {icon && <div className={styles.iconContainer}>
+                <img 
+                                src={icono} 
+                                //className={styles.iconoImagen}
+                                alt={etiqueta} 
+                                ></img></div>}
             <span className={styles.navText}>{etiqueta}</span>
         </div>
     );
