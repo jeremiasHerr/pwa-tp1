@@ -3,13 +3,11 @@ import InfoPeli from "../InfoPeli/InfoPeli";
 import { X, Clapperboard, TvMinimalPlay, Form, Save} from "lucide-react";
 import FormInput from "../FormInput/FormInput";
 import {useEffect, useState } from "react";
+import BotonCerrarModal from "../BotonCerrarModal/BotonCerrarModal";
 
 export default function Formulario({mostrarFormulario, agregarObraVista,agregarObraPorVer}) {
     const opcionesGenero = ["Acción","Animación","Aventura","Ciencia Ficción","Comedia","Crimen","Documental",
       "Drama","Familiar","Fantasía","Misterio","Romance","Suspenso","Terror",];
-
-   
-    
     
     const [tipoSeleccionado, setTipo] = useState("");
     const [errores, setErrores] = useState({})
@@ -75,9 +73,7 @@ export default function Formulario({mostrarFormulario, agregarObraVista,agregarO
             <form className={styles.formLayout} onSubmit={manejarEnvio}>
             <div className={styles.containerTitulo}>
                 <p>Subir titulo</p>
-                <button onClick={() => mostrarFormulario(false)} type="button" className={styles.btnCerrar}>
-                    <X/>
-                </button>
+                <BotonCerrarModal cerrarModal={() => mostrarFormulario(false)}/>
             </div>
             <div className={styles.containerTipoContenido}>
                 <fieldset>

@@ -1,0 +1,111 @@
+.modalCompleto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContenido {
+    background-color: #0f1930;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+    position: relative;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+.iconoContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.titulo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+
+.mensaje {
+    color: #a3aac4;
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.05rem;
+}
+
+.containerBotones {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btnCancelar {
+    flex: 1;
+    padding: 0.8rem 1.5rem;
+    background-color: transparent;
+    border: 2px solid #4f46e5;
+    border-radius: 0.5rem;
+    color: #a3aac4;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.05rem;
+}
+
+.btnCancelar:hover {
+    background-color: rgba(79, 70, 229, 0.1);
+    color: #ffffff;
+    border-color: #6366f1;
+}
+
+.btnConfirmar {
+    flex: 1;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff7d54;
+    border: none;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.05rem;
+}
+
+.btnConfirmar:hover {
+    background-color: #ff9570;
+    box-shadow: 0 10px 20px rgba(255, 125, 84, 0.3);
+    transform: translateY(-2px);
+}
+
+.btnConfirmar:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(255, 125, 84, 0.2);
+}
+
+.contenedorBtnCerrar {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
