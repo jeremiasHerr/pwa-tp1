@@ -58,6 +58,7 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
     const totalTitulos = catalogoCompleto.length;
     const totalSeriesVistas = (titulosVistos.filter(item => item.tipo == "serie")).length;
     const totaltitulosVistos = (titulosVistos.filter(item => item.tipo == "movie")).length;
+    
 
     if (catalogoCompleto.length === 0) {
         return <p style={{ color: "white", textAlign: "center" }}>Cargando catalogo</p>
@@ -107,6 +108,9 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                         <TituloColumna texto="Por Ver" cantidad={cantPorVer} />
                     </div>
                     <div className={styles.sectionContent}>
+                        {pelisPorVerFiltradas.length === 0 && (
+                            <h2 style={{color: "white"}}>No hay nada en esta lista</h2>
+                        )}
                         {
                             pelisPorVerFiltradas.map((item) => (
                                 <MediaCardLarge
@@ -130,8 +134,14 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                         <TituloColumna texto="Vistas" cantidad={cantVistas} />
                     </div>
                     <div className={styles.watchedContent}>
+                        {pelisVistasFiltradas.length === 0 && (
+                            <h2 style={{color: "white"}}>No hay nada en esta lista</h2>
+                        )}
+                        
                         {
+                            
                             pelisVistasFiltradas.map((item) => (
+                                
                                 <MediaCardCompact
                                     key={item.id}
                                     id={item.id}
@@ -145,7 +155,9 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                                     moverAPorVer={moverAPorVer}
                                     alEditar={() => alEditar(item)}
                                 />
+                                
                             ))
+                            
                         }
                     </div>
                 </div>
