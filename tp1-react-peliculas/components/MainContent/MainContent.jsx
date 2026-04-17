@@ -3,10 +3,12 @@ import MediaCardCompact from "../MediaCardCompact/MediaCardCompact";
 import styles from './MainContent.module.css'
 import TituloColumna from "../TituloColumnas/TituloColumna";
 import DashboardControl from "../DashboardControl/DashboardControl";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import StatisticsCard from "../StatiticsCard/StatisticCard";
 
 export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLista, moverAPorVer, catalogoCompleto, catalogoFiltrado, alEditar, buscarTerm = "", tipoSeleccionado = "all", generoSeleccionado = "all" }) {
+  const [ordenarPor, setOrdenarPor] = useState("año");
+  const [ordenAscendente, setOrdenAscendente] = useState(true);
   const obrasUsuario = useMemo(() => {
       const catalogo = JSON.parse(localStorage.getItem("titulos")) || [];
 
@@ -42,20 +44,43 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
     });
   };
 
+  // Función para ordenar películas
+  const ordenarPeliculas = (items) => {
+    const itemsOrdenados = [...items];
+    
+    if (ordenarPor === "año") {
+      itemsOrdenados.sort((a, b) => {
+        const comparacion = (a.anio || 0) - (b.anio || 0);
+        return ordenAscendente ? comparacion : -comparacion;
+      });
+    } else if (ordenarPor === "puntuacion") {
+      itemsOrdenados.sort((a, b) => {
+        const puntuacionA = a.calificacion || 0;
+        const puntuacionB = b.calificacion || 0;
+        const comparacion = puntuacionA - puntuacionB;
+        return ordenAscendente ? comparacion : -comparacion;
+      });
+    }
+    
+    return itemsOrdenados;
+  };
+
   // Filtrar las obras según el término de búsqueda, tipo y género
   const pelisPorVerFiltradas = useMemo(() => {
-    return aplicarFiltroTermino(obrasUsuario.pelisPorVer);
-  }, [obrasUsuario.pelisPorVer, buscarTerm, tipoSeleccionado, generoSeleccionado]);
+    const filtradas = aplicarFiltroTermino(obrasUsuario.pelisPorVer);
+    return ordenarPeliculas(filtradas);
+  }, [obrasUsuario.pelisPorVer, buscarTerm, tipoSeleccionado, generoSeleccionado, ordenarPor, ordenAscendente]);
 
   const pelisVistasFiltradas = useMemo(() => {
-    return aplicarFiltroTermino(obrasUsuario.pelisVistas);
-  }, [obrasUsuario.pelisVistas, buscarTerm, tipoSeleccionado, generoSeleccionado]);
+    const filtradas = aplicarFiltroTermino(obrasUsuario.pelisVistas);
+    return ordenarPeliculas(filtradas);
+  }, [obrasUsuario.pelisVistas, buscarTerm, tipoSeleccionado, generoSeleccionado, ordenarPor, ordenAscendente]);
   
     const titulosPorVer = catalogoCompleto.filter(item => porVer.map(String).includes(String(item.id)));
     const titulosVistos = vistas.length > 0 ? catalogoCompleto.filter(item => vistas.includes(item.id)) : [];
     const cantPorVer = pelisPorVerFiltradas.length;
     const cantVistas = pelisVistasFiltradas.length;
-    const totalTitulos = catalogoCompleto.length;
+    const totalTitulos = titulosPorVer.length + titulosVistos.length;
     const totalSeriesVistas = (titulosVistos.filter(item => item.tipo == "serie")).length;
     const totaltitulosVistos = (titulosVistos.filter(item => item.tipo == "movie")).length;
     
@@ -101,7 +126,10 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
 
                 
                 <DashboardControl
-
+                  ordenarPor={ordenarPor}
+                  setOrdenarPor={setOrdenarPor}
+                  ordenAscendente={ordenAscendente}
+                  setOrdenAscendente={setOrdenAscendente}
                 />
                 <div className={styles.section}>
                     <div className={styles.sectionTitle}>
@@ -121,6 +149,7 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                                     anio={item.anio}
                                     tipo={item.tipo}
                                     titulo={item.titulo}
+                                    calificacion={item.calificacion}
                                     moverAVisto={moverAVisto}
                                     eliminarDeLista={eliminarDeLista}
                                     alEditar={() => alEditar(item)}
@@ -150,7 +179,7 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                                     anio={item.anio}
                                     tipo={item.tipo}
                                     titulo={item.titulo}
-                                    puntuacion={item.puntuacion}
+                                    calificacion={item.calificacion}
                                     eliminarDeLista={eliminarDeLista}
                                     moverAPorVer={moverAPorVer}
                                     alEditar={() => alEditar(item)}

@@ -1,5 +1,6 @@
 import InfoPeli from "../InfoPeli/InfoPeli";
 import CardBadge from "../CardBadge/CardBadge";
+import Rating from "../Rating/Rating";
 import { Trash2, Pencil, CirclePlus } from "lucide-react";
 import styles from "./MediaCardLarge.module.css";
 import ModalConfirmacion from "../ModalConfirmacion/ModalConfirmacion";
@@ -12,6 +13,7 @@ export default function MediaCardLarge({
   anio,
   tipo,
   titulo,
+  calificacion,
   moverAVisto,
   eliminarDeLista,
   alEditar,
@@ -42,6 +44,7 @@ export default function MediaCardLarge({
         </div>
         <div className={styles.cardActions}>
           <CardBadge tipo={tipo} texto={tipo} size="large" />
+          <Rating puntuacion={calificacion} />
           <div className={styles.buttonGroup}>
             <button
               className={styles.iconButton}

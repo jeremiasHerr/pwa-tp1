@@ -9,7 +9,7 @@ const SearchBar = ({ onFilter }) => {
   const [valorTipo, setValorTipo] = useState('all');
   const [valorGenero, setValorGenero] = useState('all');
   useEffect(() => {
-    onFilter?.({ busqueda: valorBusqueda, tipo: valorTipo, genero: valorGenero});
+    onFilter?.({ busqueda: valorBusqueda, tipo: valorTipo, genero: valorGenero });
   }, [valorBusqueda, valorTipo, valorGenero]);
 
   const handleInputChange = (e) => {
@@ -52,6 +52,11 @@ const SearchBar = ({ onFilter }) => {
             <option value="Ciencia Ficción"> Ciencia Ficcion</option>
             <option value="Suspenso">Suspenso</option>
             <option value="Musical">Musical</option>
+            <option value="Documental">Documental</option>
+            <option value="Familiar">Familiar</option>
+            <option value="Fantasía">Fantasía</option>
+            <option value="Misterio">Misterio</option>
+
           </select>
         </FilterDropdown>
 
@@ -63,7 +68,7 @@ const SearchBar = ({ onFilter }) => {
           </select>
         </FilterDropdown>
 
-         {/*Estaba pensando que este boton lo podemos poner dentro del searchbar para que sea estetico y guapo xd */}
+        {/*Estaba pensando que este boton lo podemos poner dentro del searchbar para que sea estetico y guapo xd */}
         <button className={styles.searchButton}>
           <svg className={styles.searchButtonIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

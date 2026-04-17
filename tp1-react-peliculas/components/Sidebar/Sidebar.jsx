@@ -4,9 +4,15 @@ import { MENU_ITEMS } from '../../src/constants/navegacion';
 import {useState } from 'react';
 import Formulario from '../Formulario/Formulario';
 
-export default function Sidebar({agregarObraPorVer, agregarObraVista}){
+export default function Sidebar({agregarObraPorVer, agregarObraVista, porVer = [], vistas = []}){
 
     const titulos = JSON.parse(localStorage.getItem("titulos")) || [];
+    
+    // Filtrar solo los títulos que están en porVer o vistas
+    const titulosUsuario = titulos.filter(titulo => 
+      porVer.includes(titulo.id) || vistas.includes(titulo.id)
+    );
+    
     const [activeTab, setActiveTab] = useState('home');
     const [formularioActivo, mostrarFormulario] = useState(false);
     let tempDrama = 0;
@@ -25,7 +31,7 @@ export default function Sidebar({agregarObraPorVer, agregarObraVista}){
     let tempFantasia = 0;
     let tempMisterio = 0;
 
-    titulos.forEach((item) => {
+    titulosUsuario.forEach((item) => {
         switch (item.genero) {
             case 'Drama':
                 tempDrama++;

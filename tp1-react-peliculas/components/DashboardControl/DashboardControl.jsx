@@ -1,9 +1,18 @@
 import {ArrowDown,ArrowUp} from "lucide-react";
 import styles from "./DashboardControl.module.css";
-import { useState } from "react";
 
-export default function DashboardControl (){
-    const [estaActivo, setEstaActivo] = useState("año");
+export default function DashboardControl ({ordenarPor, setOrdenarPor, ordenAscendente, setOrdenAscendente}){
+    
+    const handleAño = (direccion) => {
+      setOrdenarPor("año");
+      setOrdenAscendente(direccion === "up");
+    };
+
+    const handlePuntuacion = (direccion) => {
+      setOrdenarPor("puntuacion");
+      setOrdenAscendente(direccion === "up");
+    };
+
     return (
         <>
             <div className={styles.dashboard}>
@@ -11,27 +20,27 @@ export default function DashboardControl (){
                     <p className={styles.textoCategoria}>ORDENAR ARCHIVO</p>
                 </div>
                 <div className={styles.containerBotones}>
-                    <div className={`${styles.containerCategoria} ${estaActivo === "año" ? styles.containerCategoriaActivo : ''}`}>
+                    <div className={`${styles.containerCategoria} ${ordenarPor === "año" ? styles.containerCategoriaActivo : ''}`}>
                         <p>Año</p>
                     </div>
                     <div>
-                        <button onClick={()=>{setEstaActivo("año")}} className={styles.flechas}>
+                        <button onClick={() => handleAño("down")} className={styles.flechas}>
                             <ArrowDown/>
                         </button>
-                        <button onClick={()=>{setEstaActivo("año")}} className={styles.flechas}>
+                        <button onClick={() => handleAño("up")} className={styles.flechas}>
                             <ArrowUp/>
                         </button>
                     </div>
                 </div>
                 <div className={styles.containerBotones}>
-                    <div className={`${styles.containerCategoria} ${estaActivo === "puntuacion" ? styles.containerCategoriaActivo : ''}`}>
+                    <div className={`${styles.containerCategoria} ${ordenarPor === "puntuacion" ? styles.containerCategoriaActivo : ''}`}>
                         <p>Puntuacion</p>
                     </div>
                     <div>
-                        <button onClick={()=>{setEstaActivo("puntuacion")}} className={styles.flechas}>
+                        <button onClick={() => handlePuntuacion("down")} className={styles.flechas}>
                             <ArrowDown/>
                         </button>
-                        <button onClick={()=>{setEstaActivo("puntuacion")}} className={styles.flechas}>
+                        <button onClick={() => handlePuntuacion("up")} className={styles.flechas}>
                             <ArrowUp/>
                         </button>
                     </div>

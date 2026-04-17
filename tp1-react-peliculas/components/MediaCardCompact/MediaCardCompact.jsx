@@ -5,7 +5,7 @@ import styles from './MediaCardCompact.module.css'
 import { useState } from "react";
 import ModalConfirmacion from "../ModalConfirmacion/ModalConfirmacion";
 
-export default function MediaCardCompact({ id, poster, anio, genero, titulo, puntuacion, tipo, eliminarDeLista, moverAPorVer, alEditar }) {
+export default function MediaCardCompact({ id, poster, anio, genero, titulo, calificacion, tipo, eliminarDeLista, moverAPorVer, alEditar }) {
   const tipoTexto = tipo === "movie" ? "Pelicula" : "Serie";
   const [mostrarModal, setMostrarModal] = useState(false);
   return (
@@ -21,12 +21,12 @@ export default function MediaCardCompact({ id, poster, anio, genero, titulo, pun
           <InfoPeli
             texto={`${anio} • ${genero} • ${tipoTexto}`}
             nombre={titulo}
-            compacta={true}
+            compacta={true}                               
           />
           <div className={styles.spacer}></div>
         </div>
         <div className={styles.cardActions}>
-          <Rating puntuacion={puntuacion} />
+          <Rating puntuacion={calificacion} />
           <div className={styles.buttonGroup}>
             <button className={styles.iconButton} onClick={() => alEditar({ id, titulo })}>
               <Pencil className="w-3.5 h-3.5" />

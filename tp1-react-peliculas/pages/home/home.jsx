@@ -20,7 +20,7 @@ function Home({porVer, vistas, moverAVisto,eliminarDeLista, moverAPorVer, agrega
     if (datos) {
       setTitulosLocales(JSON.parse(datos));
     }
-  }, []); // Se ejecuta una sola vez al montar el componente
+  }, [porVer, vistas]); // Se ejecuta cada vez que cambien porVer o vistas
 
   const catalogoFiltrado = useMemo(() => {
     const normalizarBusqueda = buscarTerm.trim().toLowerCase();
@@ -68,7 +68,7 @@ function Home({porVer, vistas, moverAVisto,eliminarDeLista, moverAPorVer, agrega
 
       <Header onFilter={handleFilter}/>
       <div className={styles.content}>
-        <Sidebar agregarObraVista={agregarNuevaObraVista} agregarObraPorVer={agregarNuevaObraPorVer}/>
+        <Sidebar agregarObraVista={agregarNuevaObraVista} agregarObraPorVer={agregarNuevaObraPorVer} porVer={porVer} vistas={vistas}/>
         <MainContent 
           moverAPorVer={moverAPorVer} 
           moverAVisto={moverAVisto} 
