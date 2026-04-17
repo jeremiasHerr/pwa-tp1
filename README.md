@@ -49,3 +49,25 @@
     <strong>Manejo de Datos:</strong> La interacción del usuario con los formularios (como agregar o editar obras) se captura mediante <code>FormData</code> para evitar re-renderizados innecesarios, aplicando validaciones mediante el ciclo de vida de React (<code>useEffect</code> y <code>useState</code>).
   </li>
 </ul>
+
+
+<ul> 
+
+
+  <li>
+  <strong> Capturas de pantalla: </strong>
+  </li>
+  <li>
+  <img src="/tp1-react-peliculas/public/capt1.png"/>
+  </li>
+  <li>
+  <img src="/tp1-react-peliculas/public/capt2.png"/> 
+  </li>
+  <li>
+  <img src="/tp1-react-peliculas/public/capt3.png"/>
+  </li>
+  <li>
+  <img src="/tp1-react-peliculas/public/capt4.png"/>
+  </li>
+
+</ul>
