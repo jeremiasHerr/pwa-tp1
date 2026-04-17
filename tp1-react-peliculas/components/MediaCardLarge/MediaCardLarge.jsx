@@ -30,7 +30,6 @@ export default function MediaCardLarge({
           <InfoPeli
             texto={`${anio} • ${genero}`}
             nombre={titulo}
-            calificacion={calificacion}
             compacta={false}
           />
           <div className={styles.spacer}>

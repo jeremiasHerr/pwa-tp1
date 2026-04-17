@@ -10,7 +10,7 @@ export default function InfoPeli(props) {
       <div>
         <p className={`${styles.subtitle} ${textSizeClass}`}>
           {props.texto} <br></br>
-          <img src= "https://img.icons8.com/?size=100&id=81980&format=png&color=000000" style={{width: '35px', marginBottom: '-5px'}}/> {props.calificacion}
+          
         </p>
       </div>
     </div>
