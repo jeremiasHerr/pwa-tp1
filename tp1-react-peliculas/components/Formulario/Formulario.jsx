@@ -78,7 +78,7 @@ export default function Formulario({mostrarFormulario, agregarObraVista,agregarO
             <div className={styles.containerTipoContenido}>
                 <fieldset>
                     <legend>
-                        <InfoPeli texto="TIPO DE CONTENIDO" compacta="true" />
+                        <InfoPeli texto="TIPO DE CONTENIDO" compacta="true"/>
                     </legend>
                     <div className={styles.containerBtns}>
                         <button type="button" onClick={() => setTipo("movie")} className={`${styles.btnTipoContenido} ${tipoSeleccionado === "movie" ? styles.btnTipoContenidoActive:""} ${errores.categoria ? styles.inputErrorCategoria : ""}`}>
