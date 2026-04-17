@@ -54,10 +54,16 @@ function App() {
   }
 
   const eliminarDeLista = (id, tipoLista) => {
+    // Eliminar del array de porVer o vistas
     setListaUsuario(prev => ({
       ...prev,
       [tipoLista]: prev[tipoLista].filter(itemId => itemId!== id)
     }));
+    
+    // Eliminar del catálogo total en localStorage
+    const titulos = JSON.parse(localStorage.getItem("titulos")) || [];
+    const titulosActualizados = titulos.filter(item => item.id !== id);
+    localStorage.setItem("titulos", JSON.stringify(titulosActualizados));
   }
 
   return (
