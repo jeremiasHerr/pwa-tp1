@@ -1,10 +1,10 @@
-import Sidebar from "../../components/Sidebar/Sidebar.jsx";
-import MainContent from "../../components/MainContent/MainContent.jsx";
-import Header from "../../components/Header/layout/Header/Header.jsx";
+import Sidebar from "../../src/components/Sidebar/Sidebar.jsx";
+import MainContent from "../../src/components/MainContent/MainContent.jsx";
+import Header from "../../src/components/Header/layout/Header/Header.jsx";
 import styles from './home.module.css';
 import { useState, useMemo, useEffect } from "react"; //
-import DataLoader from "../../components/DataLoader/DataLoader.jsx"; //
-import EditarTitulo from "../../components/EditarTitulo/EditarTitulo.jsx"; //
+import DataLoader from "../../src/components/DataLoader/DataLoader.jsx"; //
+import EditarTitulo from "../../src/components/EditarTitulo/EditarTitulo.jsx"; //
 
 function Home({porVer, vistas, moverAVisto,eliminarDeLista, moverAPorVer, agregarNuevaObraPorVer, agregarNuevaObraVista}) {
   const [buscarTerm, setBuscarTerm] = useState('');
