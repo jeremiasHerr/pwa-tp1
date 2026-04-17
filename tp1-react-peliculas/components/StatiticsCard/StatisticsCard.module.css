@@ -29,20 +29,20 @@
 }
 
 .iconoImagen {
-    width: 24px;
-    height: 24px;
+    width: 2.5rem;
+    height: 2.5rem;
     object-fit: contain;
 }
 
 .contenidoCard {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.5rem;
 }
 
 .nombreCard {
-    font-size: 10px;
-    font-weight: 700;
+    font-size: 0.8rem;
+    font-weight: 800;
     color: #6b7280;
     text-transform: uppercase;
     letter-spacing: 0.1em;

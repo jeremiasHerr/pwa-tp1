@@ -6,7 +6,7 @@ export default function Rating({puntuacion}) {
     <>
       <div className={styles.ratingContainer}>
         <div>
-            <Star className="" />
+            <Star className={styles.icon} />
         </div>
         <p className={styles.ratingValue}>{puntuacion}</p>
       </div>

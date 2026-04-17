@@ -26,7 +26,9 @@ export default function MediaCardCompact({ id, poster, anio, genero, titulo, cal
           <div className={styles.spacer}></div>
         </div>
         <div className={styles.cardActions}>
-          <Rating puntuacion={calificacion} />
+          <div className={styles.contenedorRating}>
+            <Rating puntuacion={calificacion} />
+          </div>
           <div className={styles.buttonGroup}>
             <button className={styles.iconButton} onClick={() => alEditar({ id, titulo })}>
               <Pencil className="w-3.5 h-3.5" />
