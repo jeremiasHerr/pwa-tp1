@@ -188,7 +188,7 @@ export const catalogoBase = [
     calificacion: 8.8,
     tipo: "serie",
     poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/dmo6TYuuJgaYinXBPjrgG9mB5od.jpg"
-  },
+    },
   {
     id: "20",
     titulo: "Everything Everywhere All at Once",

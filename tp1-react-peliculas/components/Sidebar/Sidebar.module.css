@@ -1,13 +1,14 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 105vh;
   width: 16rem;
   background-color: #0a0d1f;
   padding: 1.5rem;
   font-family: 'Inter', sans-serif;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   box-sizing: border-box;
+
 }
 
 .nav {
@@ -86,6 +87,15 @@
 .indigo {color: #818cf8;}
 .rose { color: #fb7185;}
 .orange {color: #fb923c;}
+.blue {color: #0000FF}
+.yellow {color: #FFFF00}
+.pink {color: #FFC0CB}
+.green {color: #008000}
+.gray {color: #808080}
+.red {color: #FF0000}
+.violet {color: #EE82EE}
+.celeste {color: #87CEEEEB}
+.vino {color: #722F37}
 
 .addButton {
   display: flex;
