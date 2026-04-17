@@ -26,8 +26,8 @@ export default function EditarTitulo({ peliculaAEditar, AlGuardar, alCancelar })
                 <label>Título</label>
                 <input 
                     type="text"
-                    name="title" 
-                    value={form.title || ''} 
+                    name="titulo" 
+                    value={form.titulo || ''} 
                     onChange={handleChange}
                     required
                 />
@@ -49,8 +49,8 @@ export default function EditarTitulo({ peliculaAEditar, AlGuardar, alCancelar })
                     <label>Año</label>
                     <input 
                         type="number"
-                        name="year" 
-                        value={form.year || ''} 
+                        name="anio" 
+                        value={form.anio || ''} 
                         onChange={handleChange}
                         required
                     />
@@ -58,13 +58,29 @@ export default function EditarTitulo({ peliculaAEditar, AlGuardar, alCancelar })
                 
                 <div className={styles.formGroup}>
                     <label>Género</label>
-                    <input 
-                        type="text"
-                        name="genre" 
-                        value={form.genre || ''} 
+                    <select 
+                        name="genero" 
+                        value={form.genero || ''} 
                         onChange={handleChange}
                         required
-                    />
+                    >
+                        <option value="">Seleccionar género</option>
+                        <option value="Acción">Acción</option>
+                        <option value="Animación">Animación</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Ciencia Ficción">Ciencia Ficción</option>
+                        <option value="Comedia">Comedia</option>
+                        <option value="Crimen">Crimen</option>
+                        <option value="Documental">Documental</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Familiar">Familiar</option>
+                        <option value="Fantasía">Fantasía</option>
+                        <option value="Misterio">Misterio</option>
+                        <option value="Musical">Musical</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Suspenso">Suspenso</option>
+                        <option value="Terror">Terror</option>
+                    </select>
                 </div>
             </div>
 
@@ -76,8 +92,8 @@ export default function EditarTitulo({ peliculaAEditar, AlGuardar, alCancelar })
                         step="0.1"
                         min="0"
                         max="10"
-                        name="rating" 
-                        value={form.rating || ''} 
+                        name="calificacion" 
+                        value={form.calificacion || ''} 
                         onChange={handleChange}
                         required
                     />
@@ -86,8 +102,8 @@ export default function EditarTitulo({ peliculaAEditar, AlGuardar, alCancelar })
                 <div className={styles.formGroup}>
                     <label>Tipo</label>
                     <select 
-                        name="type" 
-                        value={form.type || 'movie'} 
+                        name="tipo" 
+                        value={form.tipo || 'movie'} 
                         onChange={handleChange}
                         required
                     >
