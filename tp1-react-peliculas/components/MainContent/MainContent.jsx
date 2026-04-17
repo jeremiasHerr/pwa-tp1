@@ -121,6 +121,7 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                                     anio={item.anio}
                                     tipo={item.tipo}
                                     titulo={item.titulo}
+                                    calificacion={item.calificacion}
                                     moverAVisto={moverAVisto}
                                     eliminarDeLista={eliminarDeLista}
                                     alEditar={() => alEditar(item)}
@@ -150,6 +151,7 @@ export default function MainContent({ vistas, porVer, moverAVisto, eliminarDeLis
                                     anio={item.anio}
                                     tipo={item.tipo}
                                     titulo={item.titulo}
+                                    calificacion={item.calificacion}
                                     puntuacion={item.puntuacion}
                                     eliminarDeLista={eliminarDeLista}
                                     moverAPorVer={moverAPorVer}
