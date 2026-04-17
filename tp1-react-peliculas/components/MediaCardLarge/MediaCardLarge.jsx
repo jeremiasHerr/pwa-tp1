@@ -12,6 +12,7 @@ export default function MediaCardLarge({
   anio,
   tipo,
   titulo,
+  calificacion,
   moverAVisto,
   eliminarDeLista,
   alEditar,
@@ -28,6 +29,7 @@ export default function MediaCardLarge({
           <InfoPeli
             texto={`${anio} • ${genero}`}
             nombre={titulo}
+            calificacion={calificacion}
             compacta={false}
           />
           <div className={styles.spacer}>
