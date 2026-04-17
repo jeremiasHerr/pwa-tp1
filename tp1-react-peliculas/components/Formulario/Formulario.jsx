@@ -31,13 +31,13 @@ export default function Formulario({mostrarFormulario, agregarObraVista,agregarO
         const anio = formData.get("anio")?.toString().trim() || "";
         const director = formData.get("director")?.toString().trim() || "";
         const poster = formData.get("poster")?.toString().trim() || "";
-        const puntuacion = formData.get("puntuacion")?.toString().trim() || "";
+        const calificacion = formData.get("calificacion")?.toString().trim() || "";
         const categoria = tipoSeleccionado;
         if (!titulo) erroresAux.titulo = true;
         if (!anio) erroresAux.anio = true;
         if (!director) erroresAux.director = true;
         if (!poster) erroresAux.poster = true;
-        if (!puntuacion) erroresAux.puntuacion = true;
+        if (!calificacion) erroresAux.calificacion = true;
         if (!tipoSeleccionado) erroresAux.tipo = true;
         if (!categoria) erroresAux.categoria = true;
         //Si tiene errores cortamos
@@ -53,7 +53,7 @@ export default function Formulario({mostrarFormulario, agregarObraVista,agregarO
             anio: formData.get("anio"),
             director: formData.get("director"),
             poster: formData.get("poster"),
-            puntuacion: formData.get("puntuacion"),
+            calificacion: formData.get("calificacion"),
             genero: formData.get("genero")
         }
     
@@ -113,7 +113,7 @@ export default function Formulario({mostrarFormulario, agregarObraVista,agregarO
                     <FormInput error={errores.poster} nombre="poster" value="" label="URL DEL POSTER"/>
                 </div>
                 <div className={styles.columnaSelect}>
-                    <FormInput error={errores.puntuacion} nombre="puntuacion" min={1} max={10} label="PUNTUACIÓN" tipo="number"/>
+                    <FormInput error={errores.calificacion} nombre="calificacion" min={1} max={10} label="CALIFICACION" tipo="number"/>
                 </div>
             </div>
             <div className={styles.columnaRadio}>
