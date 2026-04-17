@@ -14,10 +14,8 @@ export default function StatisticsCard ({nombreCard, imagen, contador, colorClas
                     ></img>
                 </div>
                 <div className={styles.contenidoCard}>
-                    <div className="nombre">
-                        <p className={styles.nombreCard}>{nombreCard}</p>
-                        <p className={styles.contador}>{contador}</p>
-                    </div>
+                    <p className={styles.nombreCard}>{nombreCard}</p>
+                    <p className={styles.contador}>{contador}</p>
                 </div>
             </div>
         </>  

@@ -9,3 +9,9 @@
 .ratingValue {
   margin: 0;
 }
+
+.icon {
+  fill:#f789c2;
+  width: 1.7rem;
+  height: 1.7rem; 
+}
