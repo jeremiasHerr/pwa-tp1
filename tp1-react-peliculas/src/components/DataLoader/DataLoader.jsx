@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { catalogoBase } from '../../src/data/catalogo';
+import { catalogoBase } from '../../data/catalogo';
 
 const DataLoader = () => {
     useEffect(()=> {

@@ -1,6 +1,6 @@
 import styles from './Sidebar.module.css';
 import NavItem from './NavItems';
-import { MENU_ITEMS } from '../../src/constants/navegacion';
+import { MENU_ITEMS } from '../../constants/navegacion';
 import {useState } from 'react';
 import Formulario from '../Formulario/Formulario';
 
